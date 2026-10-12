@@ -1,0 +1,6 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Статус оплати</title><meta name="description" content="Статус оплати"><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><div class="hero"><section id="succeeded" hidden><h1>Дякуємо за покупку!</h1><p>Оплату підтверджено. Відкрийте розділ Files у своєму акаунті Whop, щоб завантажити книгу. Квитанція надійде на вашу пошту.</p></section>
+<section id="failed" hidden><h1>Оплата не пройшла</h1><p>Кошти не списано. Спробуйте ще раз іншим способом.</p><a class="btn" href="index.html#buy">Повернутися до оплати</a></section>
+<section id="pending" hidden><h1>Підтверджуємо оплату</h1><p>Платіж ще обробляється. Якщо доступу немає протягом години, напишіть нам.</p></section></div><script type="module">
+const s=new URLSearchParams(location.search).get("status");
+document.getElementById(s==="succeeded"?"succeeded":(s==="failed"||s==="canceled")?"failed":"pending").hidden=false;
+</script><footer><a href="index.html">Головна</a> · <a href="terms.html">Умови</a> · <a href="privacy.html">Конфіденційність</a><br>Контакт: <a href="mailto:ksi-74@ukr.net">ksi-74@ukr.net</a><br>Оплата обробляється платформою Whop.</footer></div></body></html>
