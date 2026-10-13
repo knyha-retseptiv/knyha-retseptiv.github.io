@@ -20,7 +20,7 @@ details{background:var(--card);border-radius:10px;margin:8px 0;padding:14px 18px
 .author{display:grid;grid-template-columns:minmax(0,250px) 1fr;gap:22px;align-items:start}.author img{width:100%;height:auto;border-radius:12px}
 .buy{margin-top:56px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px 20px;scroll-margin-top:70px}
 .buy h2{margin:0 0 6px;text-align:center}.buy .sub{text-align:center;color:var(--muted);margin:0 0 20px}
-#checkout{max-width:520px;margin:0 auto;min-height:120px}.fallback{text-align:center}
+#checkout{max-width:520px;margin:0 auto;min-height:120px;background:#fff;color:#111;color-scheme:light;border-radius:14px;padding:18px}.fallback{text-align:center}
 .note{border-left:4px solid var(--gold);background:#0b1713;padding:14px 18px;color:var(--muted);font-size:15px;margin-top:32px}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:#0b1713;border-top:1px solid var(--line);padding:10px;text-align:center;z-index:9}.sticky .btn{padding:11px 26px;font-size:17px}
 footer{margin-top:56px;padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}footer a{color:var(--gold)}
