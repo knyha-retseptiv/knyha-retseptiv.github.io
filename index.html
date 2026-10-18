@@ -48,8 +48,12 @@ try{
   c.create("checkout").mount("#checkout");
 }catch(e){fallback()}
 </script><footer><a href="index.html">Головна</a> · <a href="terms.html">Умови</a> · <a href="privacy.html">Конфіденційність</a><br>Контакт: <a href="mailto:ksi-74@ukr.net">ksi-74@ukr.net</a><br>Оплата обробляється платформою Whop.</footer></div><script>
-document.querySelectorAll('a[href="#buy"], a[href*="whop.com"], .btn, button').forEach(function (el, i) {
+var lastClick = 0;
+document.querySelectorAll('a[href="#buy"], a[href*="whop.com"]').forEach(function (el) {
 el.addEventListener('click', function () {
+var now = Date.now();
+if (now - lastClick < 1000) return;
+lastClick = now;
 whop.track('buy_button_click', { button: (el.textContent || '').trim().slice(0, 40) });
 });
 });
