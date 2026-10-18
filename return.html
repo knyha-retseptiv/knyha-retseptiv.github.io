@@ -1,4 +1,12 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Статус оплати</title><meta name="description" content="Статус оплати"><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><div class="hero"><section id="succeeded" hidden><h1>Дякуємо за покупку!</h1><p>Оплату підтверджено. Відкрийте розділ Files у своєму акаунті Whop, щоб завантажити книгу. Квитанція надійде на вашу пошту.</p></section>
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSVCV6SYMW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSVCV6SYMW');
+</script><title>Статус оплати</title><meta name="description" content="Статус оплати"><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><div class="hero"><section id="succeeded" hidden><h1>Дякуємо за покупку!</h1><p>Оплату підтверджено. Відкрийте розділ Files у своєму акаунті Whop, щоб завантажити книгу. Квитанція надійде на вашу пошту.</p></section>
 <section id="failed" hidden><h1>Оплата не пройшла</h1><p>Кошти не списано. Спробуйте ще раз іншим способом.</p><a class="btn" href="index.html#buy">Повернутися до оплати</a></section>
 <section id="pending" hidden><h1>Підтверджуємо оплату</h1><p>Платіж ще обробляється. Якщо доступу немає протягом години, напишіть нам.</p></section></div><script type="module">
 const s=new URLSearchParams(location.search).get("status");
