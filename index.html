@@ -47,4 +47,15 @@ try{
   const c=window.WhopElements().checkout.create({plan:PLAN_ID,returnUrl});
   c.create("checkout").mount("#checkout");
 }catch(e){fallback()}
-</script><footer><a href="index.html">Головна</a> · <a href="terms.html">Умови</a> · <a href="privacy.html">Конфіденційність</a><br>Контакт: <a href="mailto:ksi-74@ukr.net">ksi-74@ukr.net</a><br>Оплата обробляється платформою Whop.</footer></div></body></html>
+</script><footer><a href="index.html">Головна</a> · <a href="terms.html">Умови</a> · <a href="privacy.html">Конфіденційність</a><br>Контакт: <a href="mailto:ksi-74@ukr.net">ksi-74@ukr.net</a><br>Оплата обробляється платформою Whop.</footer></div><script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href="#buy"], a[href*="whop.com"]');
+  if (!a) return;
+  var place = a.closest('.top') ? 'top'
+            : a.closest('.sticky') ? 'sticky'
+            : a.closest('.hero') ? 'hero'
+            : a.closest('.fallback') ? 'fallback' : 'other';
+  try { whop.track('buy_button_click', { button: place }); } catch (x) {}
+  try { gtag('event', 'buy_button_click', { button: place }); } catch (x) {}
+});
+</script></body></html>
