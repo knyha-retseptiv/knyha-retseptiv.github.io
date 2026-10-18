@@ -6,9 +6,26 @@
   gtag('js', new Date());
 
   gtag('config', 'G-MSVCV6SYMW');
-</script><title>Статус оплати</title><meta name="description" content="Статус оплати"><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><div class="hero"><section id="succeeded" hidden><h1>Дякуємо за покупку!</h1><p>Оплату підтверджено. Відкрийте розділ Files у своєму акаунті Whop, щоб завантажити книгу. Квитанція надійде на вашу пошту.</p></section>
+</script><!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1859904271856889');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1859904271856889&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --><title>Статус оплати</title><meta name="description" content="Статус оплати"><link rel="stylesheet" href="style.css"></head><body><div class="wrap"><div class="hero"><section id="succeeded" hidden><h1>Дякуємо за покупку!</h1><p>Оплату підтверджено. Відкрийте розділ Files у своєму акаунті Whop, щоб завантажити книгу. Квитанція надійде на вашу пошту.</p></section>
 <section id="failed" hidden><h1>Оплата не пройшла</h1><p>Кошти не списано. Спробуйте ще раз іншим способом.</p><a class="btn" href="index.html#buy">Повернутися до оплати</a></section>
 <section id="pending" hidden><h1>Підтверджуємо оплату</h1><p>Платіж ще обробляється. Якщо доступу немає протягом години, напишіть нам.</p></section></div><script type="module">
 const s=new URLSearchParams(location.search).get("status");
 document.getElementById(s==="succeeded"?"succeeded":(s==="failed"||s==="canceled")?"failed":"pending").hidden=false;
+if(s==="succeeded"){try{if(!sessionStorage.getItem("purchase_sent")){fbq("track","Purchase",{value:4.99,currency:"USD"});sessionStorage.setItem("purchase_sent","1")}}catch(e){}}
 </script><footer><a href="index.html">Головна</a> · <a href="terms.html">Умови</a> · <a href="privacy.html">Конфіденційність</a><br>Контакт: <a href="mailto:ksi-74@ukr.net">ksi-74@ukr.net</a><br>Оплата обробляється платформою Whop.</footer></div></body></html>
