@@ -30,7 +30,8 @@ const box=document.getElementById("checkout");
 function fallback(){box.innerHTML='<div class="fallback"><a class="btn" href="'+WHOP_LINK+'" rel="noopener">Перейти до оплати — $4.99 (≈ 219 грн)</a></div>'}
 try{
   const returnUrl=new URL("return.html",location.href).href;
-  const c=window.WhopElements().checkout.create({plan:PLAN_ID,returnUrl});
+  const onComplete=function(r){try{if(r&&r.result==="payment"&&r.paymentId){var k="purchase_"+r.paymentId;if(!localStorage.getItem(k)){fbq("track","Purchase",{value:4.99,currency:"USD",content_name:"150 Forgotten Recipes",content_type:"product"},{eventID:r.paymentId});localStorage.setItem(k,"1")}}}catch(e){}};
+  const c=window.WhopElements().checkout.create({plan:PLAN_ID,returnUrl,onComplete});
   c.create("checkout").mount("#checkout");
 }catch(e){fallback()}
 </script>
