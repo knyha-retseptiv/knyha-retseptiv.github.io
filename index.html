@@ -45,15 +45,16 @@ if(document.getElementById("lf-honey").value){return}
 if(name.length<2){msg.textContent="Будь ласка, вкажіть ім’я.";return}
 if(!/^\+380\d{9}$/.test(contact)){msg.textContent="Введіть номер повністю: +380 і ще 9 цифр.";return}
 btn.disabled=true;msg.textContent="Надсилаємо…";
-fetch("https://formsubmit.co/ajax/albeertzem@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({"Ім’я":name,"Телефон":contact,"Сторінка":location.href,"_subject":"Нова заявка на книгу «150 Забутих рецептів»","_template":"table","_captcha":"false"})})
+fetch("https://formsubmit.co/ajax/albeertzem@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({"Ім’я":name,"Телефон":contact,"Сторінка":location.href,"_subject":"Нова заявка на книгу «150 Забутих рецептів»","_template":"table"})})
 .then(function(r){return r.json()})
 .then(function(d){
+console.log("FormSubmit response:",d);
 if(d&&(d.success===true||d.success==="true")){
 try{fbq("track","Lead",{content_name:"150 Forgotten Recipes",value:219,currency:"UAH"})}catch(x){}
 f.reset();phone.value="+380";btn.disabled=false;msg.textContent="";openModal();
-}else{throw new Error("fail")}
+}else{throw new Error(d&&d.message?d.message:"fail")}
 })
-.catch(function(){btn.disabled=false;msg.textContent="Не вдалося надіслати. Напишіть нам у Viber / Telegram: +380972322953."});
+.catch(function(err){console.error("FormSubmit error:",err);btn.disabled=false;msg.textContent="Не вдалося надіслати"+(err&&err.message&&err.message!=="fail"?" ("+err.message+")":"")+". Напишіть нам у Viber / Telegram: +380972322953."});
 });
 })();
 </script>
