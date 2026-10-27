@@ -8,3 +8,14 @@
 .revhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}.revhead .big{font-size:42px;color:var(--gold);font-weight:700;line-height:1}.revhead div{color:var(--muted);font-size:15px}
 .rv p{font-size:15px}
 .who{display:flex;align-items:center;gap:10px;margin-top:12px}.av{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex:none}
+:root{--muted:#d6cfbb}
+.wrap .hero h1{color:#f3d48a;font-weight:700;letter-spacing:.005em;text-shadow:0 2px 20px rgba(212,175,106,.28)}
+.wrap .hero h1::after{content:"";display:block;width:84px;height:3px;background:#d4af6a;border-radius:2px;margin:18px auto 0}
+.wrap .hero h1 em{color:inherit;font-style:normal}
+.wrap .hero .lead{color:#f6efdc}
+.wrap .offer .eyebrow.hot,.wrap .offer .pricerow .off{background:#c23a1e;color:#fff}
+.wrap .offer .yourprice{background:#0b1713;color:#fff;border:2px solid #ffd36b;font-size:22px;padding:14px 12px;box-shadow:0 0 0 4px rgba(255,211,107,.14)}
+.wrap .offer .bundle li{color:#f6efdc}
+.wrap .offer label{display:block;color:#f6efdc;font-weight:700}
+.wrap .offer form>p:last-of-type{opacity:1!important;font-size:14px!important;color:#e6dfcb}
+.wrap .checks li{color:#e6dfcb}
